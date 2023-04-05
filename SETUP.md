@@ -119,6 +119,7 @@ Node.js® is an open-source, cross-platform JavaScript runtime environment.
       "semi": true,
       "useTabs": false,
       "tabWidth": 2,
+      "trailingComma": "all",
     }
     ```
 
