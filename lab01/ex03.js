@@ -8,7 +8,7 @@ function add(x, y) {
 let result = add(1, 2);
 console.log(result);
 
-result = add("abc", 1); // JS 함수는 argument 타입을 검사하지 않음.
+result = add('abc', 1); // JS 함수는 argument 타입을 검사하지 않음.
 console.log(result);
 
 result = add(1); // JS 함수는 argument 개수를 검사하지 않음.
@@ -45,7 +45,7 @@ let multiply = (x, y) => x * y;
 console.log(multiply(2, 3));
 
 //let hello = function () { return '안녕하세요...'; };
-let hello = () => "안녕하세요...";
+let hello = () => '안녕하세요...';
 console.log(hello());
 
 function myFilter(arr, func) {
