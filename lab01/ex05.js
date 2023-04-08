@@ -80,3 +80,64 @@ numbers.reduce(function (total, current) {
 
 const factorial = numbers.reduce((total, current) => (total *= current), 1);
 console.log(`factorial = ${factorial}`);
+
+// 쿼리스트링을 분석해서 객체로 변환하는 함수:
+const queryString = 'apple=10&banana=20&order=ok';
+//-> { apple: 10, banana: 20, order: 'ok' }
+
+function parse(qs) {
+  let result = {};
+  const chunks = qs.split('&'); //-> ['apple=10', 'banana=20', 'order=ok']
+  for (let x of chunks) {
+    // const part = x.split('='); //-> ['apple', '10']
+    // const key = part[0]; //-> apple
+    // const value = part[1]; //-> 10
+    const [key, value] = x.split('=');
+    result[key] = value;
+  }
+
+  return result;
+}
+
+console.log(parse(queryString));
+
+// 'apple=10&banana=20&order=ok'
+function parse2(qs) {
+  let result = {};
+  qs.split('&').forEach((value) => {
+    const [k, v] = value.split('=');
+    result[k] = v;
+  });
+
+  return result;
+}
+
+console.log(parse2(queryString));
+
+// 'apple=10&banana=20&order=ok'
+function parse3(qs) {
+  return qs
+    .split('&') // ['apple=10', 'banana=20', 'order=ok']
+    .map((value) => {
+      // value='apple=10'
+      const [k, v] = value.split('='); // k=apple, v=10
+      return { k, v }; // { k: k, v: v}를 간단히 표기 문법 - ES6부터
+    });
+}
+
+console.log(parse3(queryString));
+
+function parse4(qs) {
+  return qs
+    .split('&') // ['apple=10', 'banana=20', ...]
+    .map((value) => {
+      const [k, v] = value.split('='); // [k, v] = [apple, 10]
+      return { k, v }; // { k: apple, v: 10 }
+    }) // [ { k: apple, v: 10 }, { k: banana, v:20 }, ...]
+    .reduce((prev, curr) => {
+      prev[curr.k] = curr.v; // {apple: 10}
+      return prev;
+    }, {});
+}
+
+console.log(parse4(queryString));
