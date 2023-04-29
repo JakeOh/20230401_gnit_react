@@ -2,6 +2,8 @@ import MyCompo from './components/MyCompo';
 import MyCompo2 from './components/MyCompo2';
 import MyCompo3 from './components/MyCompo3';
 import MyCompo4 from './components/MyCompo4';
+import MyState from './components/MyState';
+import MyState2 from './components/MyState2';
 
 // props: properties. 부모 컴포넌트에서 자식 컴포넌트로 데이터를 전달할 때 사용.
 // props를 전달할 때 부모 컴포넌트에서는 XML의 속성(attribute) 값으로 설정.
@@ -12,6 +14,10 @@ import MyCompo4 from './components/MyCompo4';
 function App() {
   return (
     <>
+      <MyState2 />
+      <hr />
+      <MyState />
+      <hr />
       <MyCompo4 age={16}>
         <span>
           <strong>허균</strong>
