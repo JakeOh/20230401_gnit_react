@@ -2,6 +2,7 @@ import MyCompo from './components/MyCompo';
 import MyCompo2 from './components/MyCompo2';
 import MyCompo3 from './components/MyCompo3';
 import MyCompo4 from './components/MyCompo4';
+import MyEvent from './components/MyEvent';
 import MyState from './components/MyState';
 import MyState2 from './components/MyState2';
 
@@ -14,6 +15,8 @@ import MyState2 from './components/MyState2';
 function App() {
   return (
     <>
+      <MyEvent />
+      <hr />
       <MyState2 />
       <hr />
       <MyState />
