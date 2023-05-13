@@ -14,7 +14,7 @@ const MemoEx = () => {
   const [number, setNumber] = useState('');
   const [list, setList] = useState([]);
 
-  //   const average = getAverage(list);
+  // const average = getAverage(list);
   //-> input(number state)만 변경이 되도 getAverage() 함수가 호출됨.
   const average = useMemo(() => getAverage(list), [list]);
 

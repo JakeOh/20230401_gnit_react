@@ -5,6 +5,7 @@ import LifeEx from './LifeEx';
 import LifeEx2 from './LifeEx2';
 import LifeEx3 from './LifeEx3';
 import MemoEx from './MemoEx';
+import CallbackEx from './CallbackEx';
 
 function App() {
   const [color, setColor] = useState('#000000');
@@ -19,6 +20,9 @@ function App() {
 
   return (
     <div className="App">
+      <CallbackEx />
+      <hr />
+
       <MemoEx />
       <hr />
 
