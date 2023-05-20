@@ -4,7 +4,7 @@ import './Movie.css';
 const Movie = ({ id, title, year, rating, genres, summary, poster }) => {
   return (
     <div className="movie">
-      <Link to="/movie-details">
+      <Link to={`/movie-details/${id}`} state={{ id }}>
         <img src={poster} alt={title} />
         <div>
           <h3 className="movie__title">{title}</h3>
