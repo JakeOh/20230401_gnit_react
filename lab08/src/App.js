@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './pages/Home';
 import About from './pages/About';
 import Navigation from './components/Navigation';
+import './App.css';
+import Details from './pages/Details';
 
 const App = () => {
   return (
@@ -10,6 +12,7 @@ const App = () => {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="/about" element={<About />} />
+        <Route path="/movie-details" element={<Details />} />
       </Routes>
     </BrowserRouter>
   );

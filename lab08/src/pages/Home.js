@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
 import Movie from '../components/Movie';
+import './Home.css';
 
 const Home = () => {
   const [loading, setLoading] = useState(true);
@@ -46,10 +47,12 @@ const Home = () => {
   }, []);
 
   return (
-    <div>
-      {loading
-        ? 'Loading...'
-        : movies.map((movie) => (
+    <div className="container">
+      {loading ? (
+        'Loading...'
+      ) : (
+        <div className="movies">
+          {movies.map((movie) => (
             <Movie
               key={movie.id}
               id={movie.id}
@@ -61,6 +64,8 @@ const Home = () => {
               rating={movie.rating}
             />
           ))}
+        </div>
+      )}
     </div>
   );
 };
