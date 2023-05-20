@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
+import Movie from './components/Movie';
 
 function App() {
   const [loading, setLoading] = useState(true);
@@ -44,7 +45,24 @@ function App() {
     fetchData(); // async 함수 실행
   }, []);
 
-  return <div>{loading ? 'Loading...' : 'Reay!'}</div>;
+  return (
+    <div>
+      {loading
+        ? 'Loading...'
+        : movies.map((movie) => (
+            <Movie
+              key={movie.id}
+              id={movie.id}
+              title={movie.title}
+              poster={movie.medium_cover_image}
+              year={movie.year}
+              genres={movie.genres}
+              summary={movie.summary}
+              rating={movie.rating}
+            />
+          ))}
+    </div>
+  );
 }
 
 export default App;
