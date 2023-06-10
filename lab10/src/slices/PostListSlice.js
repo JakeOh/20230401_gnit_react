@@ -37,9 +37,10 @@ export const { getPostsStart, getPostsSuccess, getPostsFailure } =
   postListSlice.actions;
 
 // reducer를 다른 모듈에서 사용할 수 있도록 export:
+// -> configureStore 함수에서 reducer 객체를 설정할 때 사용:
 export default postListSlice.reducer;
 
-// Thunk 미들웨어서 호출할 dispatch 함수를 리턴.
+// dispatch 함수에서 사용하는 비동기 action creator를 리턴.
 export const fetchPostList = () => {
   return async (dispatch) => {
     dispatch(getPostsStart()); // 포스트 목록 가져오기 시작.
