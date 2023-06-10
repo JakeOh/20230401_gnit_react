@@ -4,10 +4,13 @@ import './index.css';
 import App from './App';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
+import postListReducer from './slices/PostListSlice';
 
 // RTK(Redux Toolkit)을 사용한 리덕스 스토어 객체 생성:
 const store = configureStore({
-  reducer: {}, // TODO
+  reducer: {
+    postList: postListReducer,
+  }, // TODO
 });
 
 const root = ReactDOM.createRoot(document.getElementById('root'));

@@ -5,7 +5,9 @@ const DashboardPage = () => {
     <section>
       <h1>Dashboard</h1>
       <p>메인 페이지</p>
-      <Link to="/posts">포스트 목록</Link>
+      <Link to="/posts" className="button">
+        포스트 목록
+      </Link>
     </section>
   );
 };
