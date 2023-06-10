@@ -6,6 +6,7 @@ import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import postListReducer from './slices/PostListSlice';
 import postDetailsReducer from './slices/PostDetailsSlice';
+import commentsReducer from './slices/Comments';
 
 // RTK(Redux Toolkit)을 사용한 리덕스 스토어 객체 생성:
 const store = configureStore({
@@ -14,6 +15,7 @@ const store = configureStore({
   reducer: {
     postList: postListReducer,
     postDetails: postDetailsReducer,
+    comments: commentsReducer,
   },
 });
 

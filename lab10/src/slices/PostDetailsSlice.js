@@ -46,11 +46,18 @@ export const fetchPostDetails = (id) => {
     dispatch(getPostDetailsStart());
 
     try {
-      const response = await axios.get(
+      let response = await axios.get(
         `https://jsonplaceholder.typicode.com/posts/${id}`,
       );
+      let post = response.data;
 
-      dispatch(getPostDetailsSuccess(response.data));
+      response = await axios.get(
+        `https://jsonplaceholder.typicode.com/users/${post.userId}`,
+      );
+      post.username = response.data.username;
+      post.email = response.data.email;
+
+      dispatch(getPostDetailsSuccess(post));
     } catch (error) {
       dispatch(getPostDetailsFailure());
     }
