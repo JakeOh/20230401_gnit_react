@@ -5,7 +5,7 @@ const RefVsState = () => {
   const countRef = useRef(0);
 
   const handleClickState = () => {
-    setCount(count + 1);
+    setCount(count + 1); // setCount((prev) => prev + 1);
     //-> state가 변경되면 화면이 갱신(re-render)됨!
   };
 

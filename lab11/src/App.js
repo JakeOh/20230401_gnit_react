@@ -1,5 +1,6 @@
 import { useRef } from 'react';
 import RefVsState from './components/RefVsState';
+import Stopwatch from './components/Stopwatch';
 
 function App() {
   const ref = useRef(0);
@@ -21,6 +22,9 @@ function App() {
 
       <hr />
       <RefVsState />
+
+      <hr />
+      <Stopwatch />
     </div>
   );
 }
