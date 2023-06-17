@@ -1,6 +1,9 @@
 import { useRef } from 'react';
 import RefVsState from './components/RefVsState';
 import Stopwatch from './components/Stopwatch';
+import RefDOM from './components/RefDOM';
+import ForwardRef from './components/ForwardRef';
+import ForwardRefEx from './components/ForwardRefEx';
 
 function App() {
   const ref = useRef(0);
@@ -25,6 +28,15 @@ function App() {
 
       <hr />
       <Stopwatch />
+
+      <hr />
+      <RefDOM />
+
+      <hr />
+      <ForwardRef />
+
+      <hr />
+      <ForwardRefEx />
     </div>
   );
 }
