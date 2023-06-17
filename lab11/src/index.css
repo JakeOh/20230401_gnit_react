@@ -40,3 +40,7 @@ img {
   padding: 10px;
   margin: -10px;
 }
+
+.active {
+  background-color: rgba(0, 100, 150, 0.4);
+}

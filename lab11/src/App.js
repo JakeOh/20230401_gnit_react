@@ -6,6 +6,7 @@ import ForwardRef from './components/ForwardRef';
 import ForwardRefEx from './components/ForwardRefEx';
 import ScrollDOM from './components/ScrollDOM';
 import ScrollDOM2 from './components/ScrollDOM2';
+import Carousel from './components/Carousel';
 
 function App() {
   const ref = useRef(0);
@@ -45,6 +46,9 @@ function App() {
 
       <hr />
       <ScrollDOM2 />
+
+      <hr />
+      <Carousel />
     </div>
   );
 }
