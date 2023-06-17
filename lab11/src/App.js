@@ -7,6 +7,7 @@ import ForwardRefEx from './components/ForwardRefEx';
 import ScrollDOM from './components/ScrollDOM';
 import ScrollDOM2 from './components/ScrollDOM2';
 import Carousel from './components/Carousel';
+import Video from './components/Video';
 
 function App() {
   const ref = useRef(0);
@@ -49,6 +50,9 @@ function App() {
 
       <hr />
       <Carousel />
+
+      <hr />
+      <Video />
     </div>
   );
 }
